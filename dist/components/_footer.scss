@@ -1,0 +1,23 @@
+.footer{
+    background: $clr-blue;
+    h6{
+        font-size: 1.5rem;
+        font-weight: 200;
+        margin-bottom: 2rem;
+    }
+    &_wrapper{
+        text-align: center;
+        color: #ffffff;
+    }
+    ul{
+        display: flex;
+        justify-content: center;
+        li{
+            margin: 0 3rem;
+            a{
+                color: #ffffff;
+                font-size: 3rem;
+            }
+        }
+    }
+}

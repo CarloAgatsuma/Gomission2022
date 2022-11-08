@@ -1,0 +1,178 @@
+.header{
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    &_wrapper{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .header_actions{
+            display: none;
+        }
+        .toggle_menu{
+            display: none;
+        }
+    }
+    &_nav{
+        ul{
+            display: flex;
+            align-items: center;
+            li{
+                &:nth-child(6){
+                    border:2px solid #ffffff;
+                    background: $clr-blue;
+                    padding: .8rem 2.5rem;
+                    border-radius: 3rem;
+                    &:hover{
+                        background: #ffffff;
+                        transition: .5s ease;
+                        a{
+                            color: $clr-blue;
+                        }
+                    }
+                }
+                margin-left: 2rem;
+                a{
+                    color: $clr-light;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+    .toggle_menu{
+        span{
+            display: block;
+            background: #ffffff;
+            height: .5rem;
+            width: 4rem;
+            margin-bottom: .5rem;
+            transition: 1s ease;
+        }
+    }
+    .toggle_menu.open{
+        span:nth-child(1){
+            transform: rotate(225deg) translateY(-7px);
+            background: $clr-blue;
+            transition: 1s ease; 
+        }
+        span:nth-child(2){
+            display: none;
+            transition: 1.5s ease;
+        }
+        span:nth-child(3){
+            transform: rotate(-225deg) translateY(6px);
+            background: $clr-blue;
+            transition: 1s ease;
+        }
+    }
+    @include mediaQuery($break-md){
+        &_nav{
+            display: none;
+        }
+        .toggle_menu{
+            display: block;
+            z-index: 1;
+        }
+        .header_actions{
+            display: block;
+            background: #ffffff;
+            padding: 0 10.5rem;
+            position: absolute;
+            top: 0rem;
+            position: fixed;
+            text-align: center;
+            height: 100vh;
+            width: 100%;
+            transition: .5s ease;
+            left: 100vh;
+           
+        }
+        .header_actions.open{
+            display: block;
+            background: #ffffff;
+            padding: 0 10.5rem;
+            position: absolute;
+            top: 0rem;
+            position: fixed;
+            text-align: center;
+            left: 0;
+            height: 100vh;
+            width: 100%;
+            transition: 1s ease;
+            ul{
+                margin-top: 10rem;
+                li{
+                    margin-bottom: 2rem;
+                    &:nth-child(6){
+                        background-color: $clr-blue;
+                        padding: 1rem 1rem;
+                        border-radius: 5rem;
+                       a{
+                        color: #ffffff;
+                       }
+                    }
+                    a{
+                        font-weight: 500;
+                    }
+                }
+            }
+        }
+   } 
+   @include mediaQuery($break-sm){
+        &_nav{
+            display: none;
+        }
+        .toggle_menu{
+            display: block;
+            z-index: 1;
+        }
+        .header_actions{
+            display: block;
+            background: #ffffff;
+            padding: 0 10.5rem;
+            position: absolute;
+            top: 0rem;
+            position: fixed;
+            text-align: center;
+            height: 100vh;
+            width: 100%;
+            transition: .5s ease;
+            left: 100vh;
+           
+        }
+        .header_actions.open{
+            display: block;
+            background: #ffffff;
+            padding: 0 10.5rem;
+            position: absolute;
+            top: 0rem;
+            position: fixed;
+            text-align: center;
+            left: 0;
+            height: 100vh;
+            width: 100%;
+            transition: 1s ease;
+            ul{
+                margin-top: 10rem;
+                li{
+                    margin-bottom: 2rem;
+                    &:nth-child(6){
+                        background-color: $clr-blue;
+                        padding: 1rem 1rem;
+                        border-radius: 5rem;
+                       a{
+                        color: #ffffff;
+                       }
+                    }
+                    a{
+                        font-weight: 500;
+                    }
+                }
+            }
+        }
+   } 
+}
+.header.blue{
+    background: $clr-blue;
+    transition: .5s ease;
+}

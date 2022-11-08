@@ -1,0 +1,66 @@
+$colors:(
+"dark": $clr-dark,
+"light": $clr-light,
+"warm": $clr-warm,
+"blue": $clr-blue,
+
+);
+@each $key, $val in $colors {
+    .text {
+      &--#{$key} {
+        color: $val;
+      }
+    }
+    .bg{
+      &--#{$key}{
+        background: $val;
+      }
+    }
+    .btn.bg--#{$key} {
+      @include btn($val);
+    }
+    .brdr {
+      &-#{$key} {
+        border: 1px solid $val !important;
+        color: $val;
+      }
+    }
+    .bdrbtm {
+      &-#{$key} {
+        border-bottom: 1px solid $val;
+    }
+  }
+  .hvr {
+    &-#{$key} {
+      &:hover{
+        color: $val;
+        box-shadow: 3px 7px 18px #45454589;
+        transition: 0.3s ease;
+        filter: brightness(90%);
+      }
+    }
+  }
+
+  }
+
+  $displays: (flex, block, none, inline, inline-block);
+  
+@each $display in $displays {
+  .d {
+    &--#{$display} {
+      display: $display;
+    }
+  }
+}
+
+@for $i from 1 through 20 {
+.mt-#{$i}{
+  margin-top: $i+rem;
+  }
+.mb-#{$i}{
+  margin-bottom: $i+rem;
+}
+.my-#{$i}{
+  margin: $i+rem 0;
+}
+}
